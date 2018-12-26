@@ -1,0 +1,37 @@
+[{
+        "url": "http://getbootstrap.com/",
+        "numberOfStars": "88.260+",
+        "currentVersion": "3.3.5",
+        "name": "Bootstrap"
+    },
+    {
+        "url": "http://foundation.zurb.com/",
+        "numberOfStars": "21.180+",
+        "currentVersion": "5.5.3",
+        "name": "Foundation"
+    },
+    {
+        "url": "http://ulkit.com/",
+        "numberOfStars": "88.260+",
+        "currentVersion": "3.3.5",
+        "name": "Ulkit"
+    },
+    {
+        "url": "http://semanticui.com/",
+        "numberOfStars": "21.180+",
+        "currentVersion": "5.5.3",
+        "name": "Semantic UI"
+    },
+    {
+        "url": "http://skeleton.com/",
+        "numberOfStars": "88.260+",
+        "currentVersion": "3.3.5",
+        "name": "Skeleton"
+    },
+    {
+        "url": "http://materialdesign.com/",
+        "numberOfStars": "21.180+",
+        "currentVersion": "5.5.3",
+        "name": "Material Design Lite"
+    }
+]

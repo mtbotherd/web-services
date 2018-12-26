@@ -22,12 +22,58 @@
     <!-- endbuild -->
 
     <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/axios/0.15.3/axios.min.js"></script> -->
-
 </head>
 
 <body>
+    <div class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Ajax Response</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="tru">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="m-content">
+                    <ul class="m-info">
+                      <li>Framework</li>
+                      <li></li>
+                      <li>Current Version</li>
+                      <li></li>
+                      <li>Number of Github Stars</li>
+                      <li></li>
+                      <li>Official Page</li>
+                      <li></li>
+                    </ul>
+                    <p class="m-message"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="loader"></div> -->
+
     <div class="container">
-        <h1>Metro Transit's Web Services</h1>
+        <main>
+            <h2>Popular front-end frameworks</h2>
+            <p>Click each one to load details via AJAX.</p>
+            <div class="boxes">
+                <a class="btn btn-primary" href="#">Bootstrap</a>
+                <a class="btn btn-primary" href="#">Foundation</a>
+                <a class="btn btn-primary" href="#">UIkit</a>
+                <a class="btn btn-primary" href="#">Semantic UI</a>
+                <a class="btn btn-primary" href="#">Skeleton</a>
+                <a class="btn btn-primary" href="#">Material Design Lite</a>
+            </div>
+        </main>
+
+        <!-- <h1>Metro Transit's Web Services</h1>
+        <h2>Using vanilla JavaScript</h2>
+        <div><button id="request">Learn more about Einstein</button></div>
+        <div id="bio"></div>
+        <hr />
+        <h2>Using jQuery</h2>
+        <div><button id="request2">Learn more about Einstein</button></div>
+        <div id="bio2"></div> -->
     </div>
 
     <footer></footer>
@@ -39,6 +85,7 @@
     <script src="js/vue.js"></script>
     <script src="js/main.js"></script>
     <!-- endBuild -->
+    <script src="js/learning-ajax.js"></script>
 </body>
 
 </html>
