@@ -5,7 +5,7 @@ $(document).ready(function() {
     $('#jsGetProviders').click(function() {
         var providers = $('.providers');
 
-        providers.text('Loading data from JSON source...');
+        providers.text('Getting data from the server...');
 
         $.ajax({
             type: 'GET',
@@ -28,7 +28,7 @@ $(document).ready(function() {
     $('#jsGetRoutes').click(function() {
         var routes = $('.routes');
 
-        routes.text('Loading data from JSON source...');
+        routes.text('Getting data from the server...');
 
         $.ajax({
             type: 'GET',
@@ -51,7 +51,7 @@ $(document).ready(function() {
     $('#jsGetDirections').click(function() {
         var directions = $('.directions');
 
-        directions.text('Loading data from JSON source...');
+        directions.text('Getting data from the server...');
 
         $.ajax({
             type: 'GET',
@@ -74,7 +74,7 @@ $(document).ready(function() {
     $('#jsGetStops').click(function() {
         var stops = $('.stops');
 
-        stops.text('Loading data from JSON source...');
+        stops.text('Getting data from the server...');
 
         $.ajax({
             type: 'GET',
@@ -89,6 +89,93 @@ $(document).ready(function() {
                 output += '</p>';
                 stops.html(output);
                 $('#jsGetStops').hide();
+            }
+        });
+    });
+
+    // Get Departures
+    $('#jsGetDepartures').click(function() {
+        var departures = $('.departures');
+
+        departures.text('Getting data from the server...');
+
+        $.ajax({
+            type: 'GET',
+            url: 'http://svc.metrotransit.org/NexTrip/11167?format=json',
+            dataType: 'json',
+            success: function(data) {
+                console.log(data);
+                var output = '<table class="table table-striped"><thead><tr><th>Block Number</th><th>Departure Text</th><th>Departure Time</th><th>Description</th><th>Gate</th><th>Route</th><th>Route Direction</th><th>Terminal</th><th>Vehicle Heading</th><th>Vehicle Latitude</th><th>Vehicle Longitude</th></tr></thead><tbody>';
+                for (var i in data) {
+                    output += '<tr><td>' +
+                        data[i].BlockNumber +
+                        '</td><td>' +
+                        data[i].DepartureText +
+                        '</td><td>' +
+                        data[i].DepartureTime +
+                        '</td><td>' +
+                        data[i].Description +
+                        '</td><td>' +
+                        data[i].Gate +
+                        '</td><td>' +
+                        data[i].Route +
+                        '</td><td>' +
+                        data[i].RouteDirection +
+                        '</td><td>' +
+                        data[i].Terminal +
+                        '</td><td>' +
+                        data[i].VehicleHeading +
+                        '</td><td>' +
+                        data[i].VehicleLatitude +
+                        '</td><td>' +
+                        data[i].VehicleLongitude +
+                        '</td></tr>';
+                }
+                output += '</tbody></table>';
+                departures.html(output);
+                $('#jsGetDepartures').hide();
+            }
+        });
+    });
+
+    // Get Timepoint Departures
+    $('#jsGetTimepointDepartures').click(function() {
+        var timepointDepartures = $('.timepointDepartures');
+
+        timepointDepartures.text('Getting data from the server...');
+
+        $.ajax({
+            type: 'GET',
+            url: 'http://svc.metrotransit.org/NexTrip/Stops/5/4?format=json',
+            dataType: 'json',
+            success: function(data) {
+                console.log(data);
+                var output = '<p>';
+                for (var i in data) {
+                    output += data[i].BlockNumber +
+                        ' - ' +
+                        data[i].DepartureText +
+                        ' - ' +
+                        data[i].DepartureTime +
+                        ' - ' +
+                        data[i].Description +
+                        ' - ' +
+                        data[i].Route +
+                        ' - ' +
+                        data[i].RouteDirection +
+                        ' - ' +
+                        data[i].Terminal +
+                        ' - ' +
+                        data[i].VehicleHeading +
+                        ' - ' +
+                        data[i].VehicleLatitude +
+                        ' - ' +
+                        data[i].VehicleLongitude +
+                        '<br />';
+                }
+                output += '</p>';
+                timepoint-departures.html(output);
+                $('#jsGetTimepointDepartures').hide();
             }
         });
     });
